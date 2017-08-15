@@ -12,21 +12,18 @@ namespace Chatter.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Chat
+    public partial class AspNetRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Chat()
+        public AspNetRole()
         {
-            this.Likes = new HashSet<Like>();
+            this.AspNetUsers = new HashSet<AspNetUser>();
         }
     
-        public int ChatID { get; set; }
-        public string UserID { get; set; }
-        public string Message { get; set; }
-        public System.DateTime Timestamp { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     
-        public virtual AspNetUser AspNetUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Like> Likes { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }
