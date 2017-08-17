@@ -216,31 +216,50 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChatsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>Chatter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>Chatter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>Chatter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>Chatter.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Chat.cs">
-      <DependentUpon>ChatterModel.tt</DependentUpon>
+      <DependentUpon>Chatter.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChatterModel.Context.cs">
+    <Compile Include="Models\Chatter.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChatterModel.Context.tt</DependentUpon>
+      <DependentUpon>Chatter.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChatterModel.cs">
+    <Compile Include="Models\Chatter.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChatterModel.tt</DependentUpon>
+      <DependentUpon>Chatter.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChatterModel.Designer.cs">
+    <Compile Include="Models\Chatter.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChatterModel.edmx</DependentUpon>
+      <DependentUpon>Chatter.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>Chatter.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Like.cs">
+      <DependentUpon>Chatter.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -265,23 +284,23 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\ChatterModel.edmx">
+    <EntityDeploy Include="Models\Chatter.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ChatterModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Chatter.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ChatterModel.edmx.diagram">
-      <DependentUpon>ChatterModel.edmx</DependentUpon>
+    <Content Include="Models\Chatter.edmx.diagram">
+      <DependentUpon>Chatter.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Models\ChatterModel.Context.tt">
+    <Content Include="Models\Chatter.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChatterModel.edmx</DependentUpon>
-      <LastGenOutput>ChatterModel.Context.cs</LastGenOutput>
+      <DependentUpon>Chatter.edmx</DependentUpon>
+      <LastGenOutput>Chatter.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ChatterModel.tt">
+    <Content Include="Models\Chatter.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChatterModel.edmx</DependentUpon>
-      <LastGenOutput>ChatterModel.cs</LastGenOutput>
+      <DependentUpon>Chatter.edmx</DependentUpon>
+      <LastGenOutput>Chatter.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -334,6 +353,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Chats\Create.cshtml" />
+    <Content Include="Views\Chats\Delete.cshtml" />
+    <Content Include="Views\Chats\Details.cshtml" />
+    <Content Include="Views\Chats\Edit.cshtml" />
+    <Content Include="Views\Chats\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
