@@ -11,38 +11,42 @@
 </p>
 <div id="response"></div>
 <button id="getChats" class="btn btn-primary">Get Chats</button>
+<button id="postChats" class="btn btn-primary">Post</button>
 
 @section Scripts {
     <script>
         $(document).ready(function () {
+            $("#getChats").click(function () {
+                $("#response").empty();
+                $.get("@Url.Action("TestJson","Chats")", function (serverResponse) {
+                    var jsonTest = JSON.parse(serverResponse);
+                    //console.log(jsonTest);
 
-            $("#getChats").click(
- function () {
-     $.get("@Url.Action("TestJson","Chats")", function (serverResponse) {
-         var jsonTest = JSON.parse(serverResponse);
-         //console.log(jsonTest);
+                    var ul = $("<ul>", { id: "messageList", "class": "bg-primary" });
+                    ul.click(function () { alert("ul was clicked!"); });
+                    $("#response").append(ul);
 
-         var ul = $("<ul>", { id: "messageList", "class": "bg-primary" });
-         ul.click(function () { alert("ul was clicked!"); });
-         $("#response").append(ul);
+                    $.each(jsonTest, function (inx, val) {
+                        var myBgClass = ["bg-info", "bg-warning"];
+                        var li = $("<li>", { id: "li" + inx, "class": myBgClass[inx % 2] });
+                        var p = $("<p>")
+                        li.text(val.UserName);
+                        p.text(val.Message);
+                        //li.click(function () { alert("my index is " + inx); });
+                        ul.append(li);
+                        li.append(p);
+                        //similar to $("#messageList").append(li), but more
+                        //efficient b/c it doesn't need to query for the list
+                        //again.
+                    });
+                });
+            });
 
-         $.each(jsonTest, function (inx, val) {
-             var myBgClass = ["bg-info", "bg-warning"];
-             var li = $("<li>", { id: "li" + inx, "class": myBgClass[inx % 2] });
-             var p = $("<p>")          
-             li.text(val.UserName);
-             p.text(val.Message);
-             //li.click(function () { alert("my index is " + inx); });
-             ul.append(li);
-             li.append(p);
-             //similar to $("#messageList").append(li), but more
-             //efficient b/c it doesn't need to query for the list
-             //again.
-         });
-     })
- }
-    );
-        }
-        );
+            $("#postChats").click(function () {
+                var Message = prompt("Type your chat", " ");
+                $.post("@Url.Action("PostChats","Chats")", { Message, Message });
+            });
+
+        });
     </script>
 }
