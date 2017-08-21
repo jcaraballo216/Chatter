@@ -22,3 +22,26 @@ select,
 textarea {
     max-width: 280px;
 }
+.navbar-brand {
+    font-size:30px;
+    font-style:italic;
+    
+}
+/*.navbar {
+    background-color: dodgerblue;
+    color:black;
+}*/
+
+.navbar-fixed-top {
+    background-color: antiquewhite;
+    color:white;
+}
+.jumbotron {
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('../Images/chat.png');
+    background-repeat: no-repeat;
+    opacity:1;
+}

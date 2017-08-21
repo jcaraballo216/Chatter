@@ -288,6 +288,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Chatter.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\chat.png" />
+    <Content Include="Images\chat2.png" />
     <Content Include="Models\Chatter.edmx.diagram">
       <DependentUpon>Chatter.edmx</DependentUpon>
     </Content>
